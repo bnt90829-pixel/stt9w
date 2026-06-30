@@ -1,0 +1,26 @@
+import os
+import dj_database_url
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+SECRET_KEY = 'medad-secret-key-2026'
+
+DEBUG = True
+
+ALLOWED_HOSTS = ['*']
+
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+]
+
+# تم ربط قاعدة بيانات Neon لتطبيق مداد بنجاح هنا ✅
+DATABASES = {
+    'default': dj_database_url.config(
+        default='postgresql://neondb_owner:npg_SqnwGNH16gsY@ep-gentle-credit-ad8slvw8.c-2.us-east-1.aws.neon.tech/neondb?sslmode=require'
+    )
+}
